@@ -45,7 +45,27 @@
 #### Problem after 1NF:
 * Using the First Normal Form, <strong>data redundancy increases</strong>, as there will be many columns with same data in multiple rows but each row as a whole will be unique.
 
-#### Design Flaw
+### Solution: Split the table
+
+##### Table 1: movies
+|movie_id|movie_name|
+---|--|
+|1|Padikathavan |
+|2|Jumanji |
+|3|Sketch |
+
+
+##### Table 2: theatres
+|theatre_id|movie_id|theatre_name|
+---|--|--|
+|1|1 |Satyam|
+|2|1 |Express Avenue|
+|3|2 |Satyam|
+|4|2 |AGS|
+|5|2 |Express Avenue|
+|6|3 |Express Avenue|
+|7|3 |Skywalk|
+
 
 #### Normalization
 * Normalization is a process of organizing the data in database to :avoid 
