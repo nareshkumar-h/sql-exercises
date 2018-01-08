@@ -217,4 +217,27 @@ select g.group_name , u.name, u.mobile_no from groups g , group_members gm, user
 g.id = gm.group_id and u.id = gm.user_id;
 ```
 
+## Sprint 7
+### Feature 7: Marketing Team - Analytics
+#### Task 7.1: How many messages have been sent in our application ?
+```sql
+select count(*) from messages;
+```
 
+#### Task 7.2: Display how many messages posted by each user ?
+```sql
+select posted_by, count(*) from messages group by posted_by;
+```
+
+#### Task 7.3: Display how many messages received by each user ?
+```sql
+select user_id, count(*) from messages group by user_id;
+```
+
+#### Task 7.4: Display message count
+```sql
+select posted_by, count(*) cnt from messages group by posted_by order by cnt desc;
+```
+
+#### Task 7.3: Display Top 10 users who have posted more messages ?
+todo
