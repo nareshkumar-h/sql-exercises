@@ -49,8 +49,6 @@ CREATE TABLE messages (
     posted_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     user_id INT NOT NULL,
     posted_by INT NOT NULL,
-    read_status TINYINT(1) NOT NULL DEFAULT 0,
-    read_time TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES users (id),
     FOREIGN KEY (posted_by) REFERENCES users (id)
 );
