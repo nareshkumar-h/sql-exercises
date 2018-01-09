@@ -3,7 +3,7 @@
 # Sprint 1:
 ## Feature 1: Manage Products 
 
-#### Design 1
+## Design 1
 * Create table "products"
 
 |product_name| category | price |
@@ -16,7 +16,7 @@
 | OnePlus| MOBILE | 30000 |
 
 
-#### Design 2:
+## Design 2:
 * Create table "products"
 
 |product_id| product_name|price |
@@ -39,7 +39,7 @@
 |5| MOBILE |
 |6| MOBILE | 
 
-#### Design 3
+## Design 3
 
 * Create table "products"
 
@@ -69,3 +69,16 @@
 |4| 2 |
 |5| 2 |
 |6| 2 | 
+
+
+## What is Functional Dependency ?
+
+* The attributes of a table is said to be dependent on each other when an attribute of a table uniquely identifies another attribute of the same table.
+
+* Here <strong>PRODUCT_ID</strong> attribute uniquely identifies the <strong>PRODUCT_NAME</strong> attribute of products table.
+* If we know the <strong>PRODUCT_ID</strong> we can tell the <strong>PRODUCT_NAME</strong> associated with it. 
+* This is known as <strong>functional dependency</strong>.
+* It can be written as PRODUCT_ID -> PRODUCT_NAME or in words we can say PRODUCT_NAME is functionally dependent on PRODUCT_ID.
+
+Note:
+* If column A of a table uniquely identifies the column B of same table then it can represented as A->B (Attribute B is functionally dependent on attribute A)
