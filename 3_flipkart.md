@@ -82,3 +82,7 @@
 
 Note:
 * If column A of a table uniquely identifies the column B of same table then it can represented as A->B (Attribute B is functionally dependent on attribute A)
+
+
+## What is Transitive Functional Dependency ?
+* http://ion.uwinnipeg.ca/~rmcfadye/2814/hypergraph/tFd.html
