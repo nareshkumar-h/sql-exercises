@@ -91,4 +91,7 @@
 |7|3 |Skywalk|
 
 
+#### Advantages:
+*  It is considered best because it does not suffer from redundancy and it is completely general, having no limit placed on
+a maximum number of values.
 
