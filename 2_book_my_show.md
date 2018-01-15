@@ -27,6 +27,12 @@
 * As per the rule of first normal form, an attribute (column) of a table cannot hold multiple values. 
 * It should hold only atomic values.
 
+* It was defined to disallow multivalued attributes, composite attributes, and their combinations.
+* It states that the domain of an attribute must include only atomic (simple, indivisible) values and that the value of any attribute in a tuple must be a single value from the domain of that attribute.
+* Hence, 1NF disallows having a set of values, a tuple of values, or a combination of both as an attribute value for a single tuple.
+* In other words, 1NF disallows relations within relations or relations as attribute values within tuples. 
+* The only attribute values permitted by 1NF are single atomic (or indivisible) values.
+
 #### Violation #1: 
 * e.g: theatre_names => Satyam,Express Avenue
         
