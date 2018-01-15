@@ -24,19 +24,37 @@
 
 #### First Normal Form (1NF)
 #### Rule 1:
-* As per the rule of first normal form, an attribute (column) of a table cannot hold multiple values. 
-* It should hold only atomic values.
-
 * It was defined to disallow multivalued attributes, composite attributes, and their combinations.
 * It states that the domain of an attribute must include only atomic (simple, indivisible) values and that the value of any attribute in a tuple must be a single value from the domain of that attribute.
 * Hence, 1NF disallows having a set of values, a tuple of values, or a combination of both as an attribute value for a single tuple.
 * In other words, 1NF disallows relations within relations or relations as attribute values within tuples. 
 * The only attribute values permitted by 1NF are single atomic (or indivisible) values.
 
+
 #### Violation #1: 
 * e.g: theatre_names => Satyam,Express Avenue
         
-#### After Applying 1st Normal Form
+#### Design Proposal 1: 
+
+* Assumption: 
+  * If a maximum number of values is known for the attribute—for example, if it is known that at most three theatre can run the same movie.
+  * Then replace the theatre_names attribute by three atomic attributes: 
+      * theatre_name_1, theatre_name_2, and theatre_name_3.
+
+|id|movie_name|theatre_name_1|theatre_name_2|theatre_name_3|
+---|--|--|--|--|
+|1|Padikathavan |Satyam|Express Avenue|
+|2|Jumanji |Satyam|AGS|Express Avenue|
+|3|Sketch |Express Avenue|Skywalk|
+
+* Drawbacks:
+   * This solution has the disadvantage of introducing NULL values if a movie is running in fewer than three locations. 
+   * It further introduces spurious semantics about the ordering among the location values that is not originally intended.
+   * Querying on this attribute becomes more difficult.
+   * For example, consider how you would write the query: 
+      * List the movies running in "Express Avenue" theatre.
+
+#### Design Proposal 2: 
 
 |id|movie_name|theatre_name|
 ---|--|--|
@@ -48,10 +66,10 @@
 |6|Sketch |Express Avenue|
 |7|Sketch |Skywalk|
 
-#### Problem after 1NF:
+#### Drawbacks:
 * Using the First Normal Form, <strong>data redundancy increases</strong>, as there will be many columns with same data in multiple rows but each row as a whole will be unique.
 
-### Solution: Split the table
+### Design Proposal 3( Recommended) : Split the table
 
 ##### Table 1: movies
 |movie_id|movie_name|
@@ -72,20 +90,5 @@
 |6|3 |Express Avenue|
 |7|3 |Skywalk|
 
-
-#### Normalization
-* Normalization is a process of organizing the data in database to :avoid 
-   * data redundancy
-   * insertion anomaly
-   * update anomaly 
-   * deletion anomaly. 
-
-* Let’s discuss about anomalies first then we will discuss normal forms with examples.
-
-#### Types of Anomalies
-* There are three types of anomalies that occur when the database is not normalized. 
-   * Insertion
-   * Update and 
-   * Deletion anomaly.
 
 
